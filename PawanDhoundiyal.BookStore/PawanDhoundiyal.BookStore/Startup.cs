@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -40,6 +42,16 @@ namespace PawanDhoundiyal.BookStore
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            #region using static files in website we need to tell the pipeline we are using static files in pipeline
+            app.UseStaticFiles();
+            //if we wannt to Use static Files From Some Other Folder
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),"MyStaticFiles")),
+                RequestPath = "/MyStaticFiles"
+            });
+            #endregion
 
             #region use Use method to create custom middleware start
 
@@ -98,6 +110,7 @@ namespace PawanDhoundiyal.BookStore
                 //});
 
                 //if our controller name is other than home then we will use other methods
+
                 endpoints.MapDefaultControllerRoute();
             });
         }
