@@ -20,12 +20,14 @@ namespace PawanDhoundiyal.BookStore.Controllers
         {
             var data= _bookrepository.GetAllBooks();
 
-            return View();
+            return View(data);
         }
 
-        public BookModel GetBook(int id)
+        public ViewResult GetBook(int id)
         {
-            return _bookrepository.GetBookid(id);
+          var data=   _bookrepository.GetBookid(id);
+
+            return View(data);
         }
 
         public List<BookModel> SearchBook(string bookName,string authorName)

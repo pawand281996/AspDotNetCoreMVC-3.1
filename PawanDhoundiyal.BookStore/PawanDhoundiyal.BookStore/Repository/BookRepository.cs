@@ -28,10 +28,10 @@ namespace PawanDhoundiyal.BookStore.Repository
         {
             return new List<BookModel>()
             {
-                new BookModel(){Id=1, Title="MVC" ,Author="Pawan"},
-                new BookModel(){Id=1, Title="Java" ,Author="Shivani"},
-                new BookModel(){Id=1, Title="c++" ,Author="Prabhat"},
-                 new BookModel(){Id=1, Title="php" ,Author="Nitu"},
+                new BookModel(){Id=1, Title="MVC" ,Author="Pawan",Description="this is description of first Book"},
+                new BookModel(){Id=1, Title="Java" ,Author="Shivani",Description="this is description of Second Book"},
+                new BookModel(){Id=1, Title="c++" ,Author="Prabhat",Description="this is description of Third Book"},
+                 new BookModel(){Id=1, Title="php" ,Author="Nitu",Description="this is description of Fifth Book"},
             };
         }
     }

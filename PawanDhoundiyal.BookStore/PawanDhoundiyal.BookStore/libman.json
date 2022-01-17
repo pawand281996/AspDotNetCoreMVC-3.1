@@ -10,5 +10,6 @@
       "library": "twitter-bootstrap@5.1.3",
       "destination": "wwwroot/lib/twitter-bootstrap/"
     }
-  ]
+    
+]
 }
